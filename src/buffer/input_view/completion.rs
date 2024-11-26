@@ -185,8 +185,7 @@ impl Commands {
                         }
                     }
                     "MSG" => {
-                        let channel_membership_prefixes = 
-                        if let Some(
+                        let channel_membership_prefixes = if let Some(
                             isupport::Parameter::STATUSMSG(channel_membership_prefixes),
                         ) =
                             isupport.get(&isupport::Kind::STATUSMSG)
@@ -666,7 +665,7 @@ impl Text {
         if let Some(index) = self.selected {
             self.filtered.get(index).cloned()
         } else {
-            (!self.prompt.is_empty()).then(|| self.prompt.clone())
+            None
         }
     }
 }
