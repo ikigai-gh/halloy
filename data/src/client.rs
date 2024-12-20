@@ -1741,7 +1741,7 @@ impl Client {
                                 ));
                             }
                         }
-                        target::Target::Query(query) => {
+                        target::Target::Query(_) => {
                             events.push(Event::ChatHistoryTargetReceived(
                                 target,
                                 server_time(&message),
